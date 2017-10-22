@@ -32,6 +32,7 @@ public class StringPanel extends JPanel implements Runnable
         wordVy = (int)(Math.random() * 7) + 3;
         setBackground(Color.black);
     }
+    @Override
     public void run()
     {
     	while(true)
@@ -46,6 +47,7 @@ public class StringPanel extends JPanel implements Runnable
     		repaint();
     	}
     }
+    @Override
     public void paintComponent(Graphics g) 
     {
         super.paintComponent(g);
