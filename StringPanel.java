@@ -62,9 +62,30 @@ public class StringPanel extends JPanel implements Runnable
 		if(wordX > width)
 		{
 			changeColor = Color.blue;
-			wordVx
+			wordVx = (int)(Math.random() * (5) + -8);
+			word = word.substring(word.length() -1) + word.substring(0, word.length()-1);
 		}
-
+		else if(wordY > height)
+		{
+			changeColor = Color.pink;
+			wordVy = (int)(Math.random() * (5) + -10);
+			word = word.substring(0, word.length()/2) + word.substring(word.length()/2, word.length()/2 + 1) + word.substring(word.length()/2);
+		}
+		else if(wordX < 0)
+		{
+			changeColor = Color.orange;
+			wordVx = (int)(Math.random() * (3) + 4);
+			word = word.substring(1, word.length()/2 + 1) + word.substring(0,1) + word.substring(word.length()/2 +1) + word.substring(1,2);
+		}
+		else if(wordY < 0)
+		{
+			changeColor = Color.green;
+			wordVy = (int)(Math.random() * (9) + 2);
+			if(word.length() > 1)
+			{
+				word = word.substring(word.length() - 1) + word.substring(word.length() +1);
+			}
+		}
 		wordX += wordVx;
 		wordY += wordVy;
 
